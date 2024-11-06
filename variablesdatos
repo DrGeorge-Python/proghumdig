@@ -1,0 +1,10 @@
+# Definir variables para un libro
+  titulo = "Cien años de soledad"  # Cadena de texto
+  autor = "Gabriel García Márquez"  # Cadena de texto
+  year = 1967  # Número entero
+  disponible = True  # Booleano que indica disponibilidad
+  descripcion = None  # Inicializamos sin descripción
+
+# Mostrar información sobre el libro
+  print(f"{titulo} fue escrito por {autor} en el año {year}.")
+  print(f"¿Está disponible? {disponible}")
