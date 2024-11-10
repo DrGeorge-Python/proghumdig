@@ -1,0 +1,11 @@
+# Definir el género literario
+genero = "novela"
+
+if genero == "novela":
+    print("Te recomendamos 'Cien años de soledad' de Gabriel García Márquez.")
+elif genero == "poesía":
+    print("Te recomendamos '20 Poemas de amor y una canción desesperada' de Pablo Neruda.")
+elif genero == "ensayo":
+    print("Te recomendamos 'El laberinto de la soledad' de Octavio Paz.")
+else:
+    print("Por el momento no tenemos recomendaciones para este género.")
