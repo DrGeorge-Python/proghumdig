@@ -1,0 +1,8 @@
+# Lista de canciones favoritas
+playlist = ["Yesterday - The Beatles", "Thriller - Michael Jackson", "Like a Rolling Stone - Bob Dylan"]
+
+# Bucle para mostrar las canciones
+contador = 1
+for cancion in playlist:
+    print(f"Canción {contador}: {cancion}")
+    contador += 1  # Incrementar el contador para numerar las canciones
