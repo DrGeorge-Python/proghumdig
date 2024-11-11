@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Lista de visualizaciones de videos
+visualizaciones = [1500, 2300, 3200, 4100, 2900]
+
+# Calcular promedio y desviación estándar
+promedio = np.mean(visualizaciones)
+desviacion = np.std(visualizaciones)
+
+# Mostrar resultados
+print(f"El promedio de visualizaciones es: {promedio}")
+print(f"La desviación estándar de las visualizaciones es: {desviacion}")
+
+# Visualización de los datos
+plt.bar(range(1, len(visualizaciones) + 1), visualizaciones)
+plt.xlabel("Video (índice)")
+plt.ylabel("Visualizaciones")
+plt.title("Visualizaciones por Video")
+plt.show()
