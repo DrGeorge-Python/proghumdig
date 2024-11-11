@@ -1,0 +1,10 @@
+# Definir la función para calcular el tiempo total de edición
+def tiempo_edicion(duracion_video, minutos_por_minuto):
+    tiempo_total = duracion_video * minutos_por_minuto
+    return tiempo_total
+
+# Llamada a la función
+duracion_video = 15  # Duración del video en minutos
+minutos_por_minuto = 5  # Tiempo en minutos para editar cada minuto de video
+tiempo_total = tiempo_edicion(duracion_video, minutos_por_minuto)
+print(f"Para editar un video de {duracion_video} minutos, necesitarás aproximadamente {tiempo_total} minutos.")
