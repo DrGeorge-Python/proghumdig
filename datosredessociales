@@ -1,0 +1,28 @@
+import pandas as pd
+
+# Datos de redes sociales y sus interacciones
+estadisticas_redes = {
+    "Red Social": ["Instagram", "Twitter", "Facebook", "TikTok", "LinkedIn"],
+    "Interacciones": [1200, 850, 950, 1600, 450]
+}
+
+# Convertir el diccionario en un DataFrame
+df = pd.DataFrame(estadisticas_redes)
+
+# Ordenar en orden descendente de interacciones
+df_ordenado = df.sort_values(by="Interacciones", ascending=False)
+
+# Filtrar redes sociales con más de 1000 interacciones
+df_filtrado = df[df["Interacciones"] > 1000]
+
+# Calcular el total y el promedio de interacciones
+total_interacciones = df["Interacciones"].sum()
+promedio_interacciones = df["Interacciones"].mean()
+
+# Mostrar resultados
+print("Redes sociales ordenadas por interacciones:")
+print(df_ordenado)
+print("\nRedes sociales con más de 1000 interacciones:")
+print(df_filtrado)
+print(f"\nTotal de interacciones: {total_interacciones}")
+print(f"Promedio de interacciones: {promedio_interacciones}")
