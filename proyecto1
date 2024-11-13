@@ -1,0 +1,44 @@
+# Datos simulados de preferencias culturales
+preferencias_culturales = [
+    {"categoria": "Libros", "nombre": "Cien años de soledad", "interacciones": 1200, "calificacion": 4.8},
+    {"categoria": "Libros", "nombre": "Don Quijote de la Mancha", "interacciones": 950, "calificacion": 4.5},
+    {"categoria": "Películas", "nombre": "El Padrino", "interacciones": 1300, "calificacion": 4.9},
+    {"categoria": "Películas", "nombre": "Parasite", "interacciones": 800, "calificacion": 4.6},
+    {"categoria": "Música", "nombre": "Bohemian Rhapsody", "interacciones": 1500, "calificacion": 4.9},
+    {"categoria": "Música", "nombre": "Imagine", "interacciones": 1100, "calificacion": 4.7}
+]
+
+# Función para calcular promedio de interacciones por categoría
+def calcular_interaccion_promedio(datos):
+    promedio_interacciones = {}
+    categorias = set([contenido["categoria"] for contenido in datos])
+    for categoria in categorias:
+        total_interacciones = sum(contenido["interacciones"] for contenido in datos if contenido["categoria"] == categoria)
+        conteo = sum(1 for contenido in datos if contenido["categoria"] == categoria)
+        promedio_interacciones[categoria] = total_interacciones / conteo
+    return promedio_interacciones
+
+# Función para clasificar contenido según popularidad
+def calificar_contenido(datos):
+    for contenido in datos:
+        if contenido["interacciones"] > 1000:
+            contenido["clasificacion"] = "Alta popularidad"
+        elif 500 <= contenido["interacciones"] <= 1000:
+            contenido["clasificacion"] = "Popularidad media"
+        else:
+            contenido["clasificacion"] = "Baja popularidad"
+
+# Aplicar funciones
+promedio_interacciones = calcular_interaccion_promedio(preferencias_culturales)
+calificar_contenido(preferencias_culturales)
+
+# Filtrar contenido con calificación alta
+alta_calificacion = [contenido for contenido in preferencias_culturales if contenido["calificacion"] >= 4.5]
+
+# Encontrar el contenido más popular
+contenido_mas_popular = max(preferencias_culturales, key=lambda x: x["interacciones"])
+
+# Resultados
+print("Promedio de interacciones por categoría:", promedio_interacciones)
+print("Contenido más popular:", contenido_mas_popular)
+print("Contenidos con calificación 4.5 o superior:", alta_calificacion)
