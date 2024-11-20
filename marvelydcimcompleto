@@ -1,0 +1,18 @@
+# Diccionario con información de un superhéroe
+superheroe = {
+    "nombre": "Iron Man",
+    "universo": "Marvel",
+    "poder": 85,             # Nivel de poder del 1 al 100
+    "apariciones": 10        # Número de películas en las que ha aparecido
+}
+
+# Mostrar datos del superhéroe
+print("Nombre:", superheroe["nombre"])
+print("Universo:", superheroe["universo"])
+print("Nivel de Poder:", superheroe["poder"])
+print("Apariciones:", superheroe["apariciones"])
+
+# Conjunto de habilidades populares de superhéroes
+habilidades_populares = {"fuerza sobrehumana", "vuelo", "velocidad", "invulnerabilidad"}
+habilidades_populares.add("telepatía")      # Agregar una habilidad nueva
+habilidades_populares.remove("velocidad")   # Eliminar una habilidad menos común
