@@ -1,0 +1,45 @@
+# Diccionarios de canciones por artista
+taylor_swift = {
+    "nombre": "Taylor Swift",
+    "canciones": [
+        {"titulo": "Love Story", "duracion": 3.55, "popularidad": 4.9},
+        {"titulo": "Anti-Hero", "duracion": 3.21, "popularidad": 5.0}
+    ]
+}
+
+sabrina_carpenter = {
+    "nombre": "Sabrina Carpenter",
+    "canciones": [
+        {"titulo": "Nonsense", "duracion": 2.44, "popularidad": 4.8},
+        {"titulo": "Fast Times", "duracion": 3.15, "popularidad": 4.6}
+    ]
+}
+
+miley_cyrus = {
+
+
+
+
+}
+
+# Conjunto de géneros musicales
+generos_divas = {"Pop", "Country", "Rock Alternativo"}
+generos_divas.add("Electropop")  # Agregar un género
+generos_divas.remove("Country") # Eliminar un género
+
+# Tupla de duración promedio y total de canciones
+def calcular_datos_artista(artista):
+
+
+
+
+
+
+
+
+# Filtrar canciones populares
+
+
+
+
+
