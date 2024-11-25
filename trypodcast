@@ -1,0 +1,24 @@
+try:
+    # Solicitar el nombre del usuario
+    nombre = input("__________ ").strip()
+    if not nombre:  # Verificar que el nombre no esté vacío
+        raise ValueError("_____________")
+
+    # Solicitar la categoría de podcast favorita
+    categoria = input("___________________ ").strip().lower()
+    if not categoria:  # Verificar que la categoría no esté vacía
+        raise ValueError("No ingresaste una categoría.")
+
+    # Recomendar un podcast basado en la categoría
+    if categoria == "comedia":
+        print(f"Hola, {nombre}. _____________________________'.")
+    elif categoria == "tecnología":
+        print(f"Hola, {nombre}. _____________________________________'.")
+    elif categoria == "historia":
+        print(f"Hola, {nombre}. _________________________________________________'.")
+    else:
+        print(f"Hola, {nombre}. __________________________________________________'.")
+except ValueError as e:
+    print(f"Error: {e}")
+finally:
+    print("¡Gracias por usar el recomendador de podcasts!")
