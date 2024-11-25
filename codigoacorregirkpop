@@ -1,0 +1,10 @@
+# Datos de idols de K-Pop
+idols = [
+    {"nombre": "Jisoo", "grupo": "BLACKPINK", "edad": 28},
+    {"nombre": "RM", "grupo": "BTS", "edad": veintiocho},  # Error en la edad
+    {"nombre": "Karina", "grupo": , "edad": 23},  # Falta el nombre del grupo
+]
+
+# Mostrar datos de los idols
+for idol in idols:
+    print(f"Idol: {idol['nombre']} - Grupo: {idol['grupo']} - Edad: {idol['edad']}")
