@@ -1,0 +1,74 @@
+# Paso 1: Guardar la serie y su elenco en un archivo
+def guardar_libreto():
+    with open("libreto.txt", "w") as archivo:
+        serie = input("¿Cuál es el nombre de la serie? ")
+        archivo.write(f"{serie}\n")  # Guardar el nombre de la serie
+        print("Ingresa al menos 3 personajes principales:")
+        for _ in range(3):  # Pedir 3 personajes
+            personaje = input("Nombre del personaje: ")
+            archivo.write(f"{personaje}\n")
+        print("¡El libreto inicial ha sido guardado!")
+
+# Paso 2: Leer el elenco actual desde el archivo
+def leer_libreto():
+    try:
+        with open("libreto.txt", "r") as archivo:
+            lineas = archivo.readlines()
+            serie = lineas[0].strip()
+            elenco = [linea.strip() for linea in lineas[1:]]
+            print(f"_____________")
+            print("_______________")
+            for personaje in elenco:
+                print("____________}")
+    except FileNotFoundError:
+        print("No se ha creado el libreto. Por favor, ingresa los datos primero.")
+
+# Paso 3: Actualizar el elenco
+def actualizar_libreto():
+    try:
+        with open("libreto.txt", "r") as archivo:
+            lineas = archivo.readlines()
+            serie = lineas[0].strip()
+            elenco = [linea.strip() for linea in lineas[1:]]
+        
+        print(f"__________")
+        print("____________")
+        for i, personaje in enumerate(elenco, start=1):
+            print(f"{i}. {personaje}")
+        
+        accion = input("¿Deseas agregar un nuevo personaje o reemplazar uno existente? (agregar/reemplazar): ").lower()
+        if accion == "agregar":
+            nuevo_personaje = input("__________________ ")
+            elenco.append(nuevo_personaje)
+        elif accion == "reemplazar":
+            num_personaje = int(input("________________________")) - 1
+            nuevo_personaje = input("______________________________")
+            elenco[num_personaje] = nuevo_personaje
+        else:
+            print("Acción no válida.")
+            return
+
+        # Guardar cambios en el archivo
+        with open("libreto.txt", "w") as archivo:
+            archivo.write(f"{serie}\n")
+            for personaje in elenco:
+                archivo.write(f"{personaje}\n")
+        print("¡El libreto ha sido actualizado!")
+    except FileNotFoundError:
+        print("No se ha creado el libreto. Por favor, ingresa los datos primero.")
+
+# Menú de opciones
+print("1. Crear un nuevo libreto")
+print("2. Leer el libreto actual")
+print("3. Actualizar el libreto")
+
+opcion = input("Selecciona una opción (1, 2, 3): ")
+
+if opcion == "1":
+    guardar_libreto()
+elif opcion == "2":
+    leer_libreto()
+elif opcion == "3":
+    actualizar_libreto()
+else:
+    print("Opción no válida.")
